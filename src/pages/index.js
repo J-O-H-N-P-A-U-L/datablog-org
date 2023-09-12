@@ -1,75 +1,33 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import * as styles from "../components/index.module.css";
 
-const links = [
+const blogPosts = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
+    title: "Unlocking Insights with Data Analysis",
+    excerpt:
+      "Join me on a journey through the world of data analysis, where we uncover hidden patterns and make data-driven decisions. Learn how Python, Pandas, and Matplotlib play pivotal roles in this adventure.",
+    postUrl: "https://datablog.org/unlocking-insights-data-analysis",
   },
   {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
+    title: "Building Dynamic Web Applications with MERN Stack",
+    excerpt:
+      "Explore the fascinating realm of full-stack web development with me as we delve into Project A. Discover how MongoDB, Express.js, React, and Node.js come together to create powerful web applications.",
+    postUrl: "https://datablog.org/mern-stack-web-development",
   },
   {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
+    title: "Inspire Your Day with React Native: Project C",
+    excerpt:
+      "Join me in exploring the world of mobile app development as we dive into Project C. This React Native-based app is designed to uplift and motivate with daily quotes and images.",
+    postUrl: "https://datablog.org/inspire-your-day-react-native",
   },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+];
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
+const DatablogHomepage = () => (
   <Layout>
     <div className={styles.textCenter}>
       <StaticImage
@@ -82,39 +40,28 @@ const IndexPage = () => (
         style={{ marginBottom: `var(--space-3)` }}
       />
       <h1>
-        Welcome to <b>Gatsby!</b>
+        Datablog.org - John Paul's Data Adventures
       </h1>
       <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+        Welcome to Datablog.org, where I, John Paul Hunter, share my exciting adventures in the world of data. Join me on a journey filled with data analysis, web development, and mobile app creation. Explore my latest blog posts below.
       </p>
     </div>
     <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
+      {blogPosts.map((post) => (
+        <li key={post.postUrl} className={styles.listItem}>
+          <h2>{post.title}</h2>
+          <p className={styles.listItemDescription}>{post.excerpt}</p>
           <a
             className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
+            href={post.postUrl}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {link.text} ↗
+            Read More ↗
           </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
         </li>
       ))}
     </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
   </Layout>
 )
 
@@ -123,6 +70,6 @@ const IndexPage = () => (
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Datablog.org - John Paul's Data Adventures" />
 
-export default IndexPage
+export default DatablogHomepage;
