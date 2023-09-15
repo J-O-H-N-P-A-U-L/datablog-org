@@ -49,7 +49,7 @@ const IndexPage = () => (
         Discover My World of Coding Adventures!
       </h1>
       <p className={styles.intro}>
-        Hey there! I'm John Paul, and I thrive in the realm of code. Join me on a journey through some of my most exciting GitHub projects. From dynamic web apps to data wizardry, Jupyter notebooks, interactive crime data visualization, and even flood forecasting, it's all here.
+        Hey there! I'm John Paul, and I thrive in the realm of code. Join me on a journey through some of my most exciting GitHub projects. From dynamic web apps to data wizardry, Jupyter notebooks, interactive crime data visualisation, and even flood forecasting, it's all here.
       </p>
     </div>
     <ul className={styles.list}>
