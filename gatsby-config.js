@@ -9,9 +9,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Datablog.org`,
-    description: `Datablog.org: Unleash the Power of Data, One Insight at a Time.`,
-    author: `@gatsbyjs`,
+    title: `datablog.org`,
+    description: `datablog.org: Unleash the Power of Data, One Insight at a Time.`,
+    author: `@johnpaul`,
     siteUrl: `https://wwww.datablog.org`,
   },
   plugins: [
